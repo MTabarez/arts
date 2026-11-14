@@ -123,9 +123,10 @@ export const CV_CONTENT: Record<Language, CVLocaleData> = {
       },
       {
         title: 'Superficies tomadas',
-        medium: 'Técnica mixta / Obra seriada (16 piezas)',
+        year: '2025',
+        medium: 'Intervención urbana, collage, fotografía, video y animación digital',
         description:
-          'Serie en desarrollo documental que explora la apropiación, la fricción material y las huellas entre superficies.',
+          'Proyecto artístico que investiga la erosión del valor colectivo en el espacio público de Montevideo mediante la extracción, intervención temporal y reconfiguración de sus superficies gráficas.',
         slug: 'superficies-tomadas',
       },
       {
@@ -134,13 +135,6 @@ export const CV_CONTENT: Record<Language, CVLocaleData> = {
         description:
           'Ensamblajes en papel que cuestionan imaginarios geográficos y perspectivas visuales establecidas en América Latina.',
         slug: 'america-invertida',
-      },
-      {
-        title: 'Borrowed Surfaces',
-        medium: 'Técnica mixta / Fotografía experimental',
-        description:
-          'Exploración de superficies apropiadas, vestigios físicos y relación entre imagen y soporte material.',
-        slug: 'borrowed-surfaces',
       },
       {
         title: 'Páramos',
@@ -461,10 +455,11 @@ export const CV_CONTENT: Record<Language, CVLocaleData> = {
         slug: 'santa-lucia-del-este',
       },
       {
-        title: 'Superficies tomadas',
-        medium: 'Mixed media / Serial works (16 pieces)',
+        title: 'Borrowed Surfaces',
+        year: '2025',
+        medium: 'Urban intervention, collage, photography, video and digital animation',
         description:
-          'Serial body of work exploring appropriation, material transformation and traces of contact between surfaces.',
+          "An artistic project investigating the erosion of collective value in Montevideo's public space through the extraction, temporary intervention and reconfiguration of its graphic surfaces.",
         slug: 'superficies-tomadas',
       },
       {
@@ -473,13 +468,6 @@ export const CV_CONTENT: Record<Language, CVLocaleData> = {
         description:
           'Paper collage works engaging Latin American identity, geographical imaginaries and inverted visual perspectives.',
         slug: 'america-invertida',
-      },
-      {
-        title: 'Borrowed Surfaces',
-        medium: 'Mixed media / Experimental photography',
-        description:
-          'Investigation of appropriated surfaces, physical traces and the relation between image and physical matter.',
-        slug: 'borrowed-surfaces',
       },
       {
         title: 'Páramos',

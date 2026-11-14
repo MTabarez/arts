@@ -26,6 +26,26 @@ export interface ProjectImage {
   kind?: 'image' | 'video-still' | 'detail' | 'installation';
 }
 
+export interface ProjectMediaItem {
+  id: string;
+  type: 'image' | 'video';
+  src?: string;
+  poster?: string;
+  aspectRatio?: string;
+  alt: LocalizedText;
+  caption?: LocalizedText;
+}
+
+export interface ProjectEditorialSection {
+  id: string;
+  heading: LocalizedText;
+  paragraphs: {
+    es: string[];
+    en: string[];
+  };
+  media?: ProjectMediaItem[];
+}
+
 export interface CollaborativeBreakdown {
   individualContribution: LocalizedText;
   collectiveProcess: LocalizedText;
@@ -38,6 +58,10 @@ export interface Project {
   slug: string;
   title: LocalizedText;
   categoryLabel: LocalizedText;
+  disciplines?: {
+    es: string[];
+    en: string[];
+  };
   filterCategories: FilterCategoryId[];
   year: string | null; // Confirmed year or range (e.g., '2021', '2020–2021', '2026'); null if unconfirmed
   statusNote?: LocalizedText; // e.g., 'In development' / 'En desarrollo'
@@ -50,6 +74,7 @@ export interface Project {
     es: string[];
     en: string[];
   };
+  editorialSections?: ProjectEditorialSection[];
   artistStatement?: LocalizedText;
   collaborativeBreakdown?: CollaborativeBreakdown;
   publicationOrExhibition?: LocalizedText;

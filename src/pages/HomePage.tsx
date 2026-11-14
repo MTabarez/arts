@@ -64,11 +64,16 @@ export const HomePage: React.FC = () => {
       <Header showBrand={false} />
 
       <main className="flex-1 w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12">
-        {/* Opening Composition: generous whitespace from top, intro + artist name anchored near bottom of first screen */}
+        {/* Opening Composition: generous whitespace from top, intro + cities + artist name anchored near bottom of first screen */}
         <section className="min-h-[58vh] sm:min-h-[68vh] md:min-h-[calc(100vh-92px)] flex flex-col justify-end pt-28 sm:pt-36 md:pt-44 pb-10 sm:pb-14 md:pb-16">
-          <p className="font-editorial-serif text-[16px] sm:text-[17px] leading-[1.6] text-[#2B2B2B] max-w-[56ch] mb-6 sm:mb-8">
-            {copy.home.intro}
-          </p>
+          <div className="max-w-[60ch] mb-6 sm:mb-8">
+            <p className="font-editorial-serif text-[13.5px] sm:text-[14.5px] leading-[1.6] text-[#2F2F2F]">
+              {copy.home.intro}
+            </p>
+            <p className="font-editorial-serif text-[12px] sm:text-[12.5px] tracking-[0.06em] text-[#555555] mt-2.5">
+              {copy.home.locations}
+            </p>
+          </div>
 
           <h1 className="font-display-serif text-[clamp(1.9rem,5.2vw,5.15rem)] leading-[0.96] tracking-[-0.015em] font-normal uppercase text-[#141414]">
             {SITE_CONFIG.artistName}

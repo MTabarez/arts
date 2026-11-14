@@ -39,6 +39,10 @@ export default function App() {
           {/* Spanish routes (default) */}
           <Route path="/es" element={<HomePage />} />
           <Route path="/es/works" element={<HomePage />} />
+          <Route
+            path="/es/works/borrowed-surfaces"
+            element={<Navigate to="/es/works/superficies-tomadas" replace />}
+          />
           <Route path="/es/works/:slug" element={<ProjectDetailPage />} />
           <Route path="/es/cv" element={<CVPage />} />
           <Route path="/es/contact" element={<ContactPage />} />
@@ -46,6 +50,10 @@ export default function App() {
           {/* English routes */}
           <Route path="/en" element={<HomePage />} />
           <Route path="/en/works" element={<HomePage />} />
+          <Route
+            path="/en/works/borrowed-surfaces"
+            element={<Navigate to="/en/works/superficies-tomadas" replace />}
+          />
           <Route path="/en/works/:slug" element={<ProjectDetailPage />} />
           <Route path="/en/cv" element={<CVPage />} />
           <Route path="/en/contact" element={<ContactPage />} />

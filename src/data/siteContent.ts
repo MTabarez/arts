@@ -22,6 +22,7 @@ export const UI_COPY: Record<
     };
     home: {
       intro: string;
+      locations: string;
       filtersToggle: string;
       categoryHeading: string;
       yearHeading: string;
@@ -50,6 +51,7 @@ export const UI_COPY: Record<
       fields: {
         title: string;
         category: string;
+        disciplines: string;
         year: string;
         status: string;
         medium: string;
@@ -94,7 +96,8 @@ export const UI_COPY: Record<
     },
     home: {
       intro:
-        'Prácticas visuales que articulan investigación artística, experimentación material y procesos culturales colaborativos en torno a la memoria, la identidad y el territorio.',
+        'Artista multimedia uruguaya que desarrolla una práctica de investigación y creación a partir de experiencias personales y colectivas, explorando la memoria, las raíces, los desplazamientos, la identidad y las relaciones con el territorio y el patrimonio cultural.',
+      locations: 'Santiago de Chile | Bogotá | Montevideo',
       filtersToggle: 'Filtros',
       categoryHeading: 'CATEGORÍA',
       yearHeading: 'AÑO',
@@ -124,6 +127,7 @@ export const UI_COPY: Record<
       fields: {
         title: 'Título',
         category: 'Categoría',
+        disciplines: 'Disciplinas',
         year: 'Año',
         status: 'Estado',
         medium: 'Medio / Técnica',
@@ -172,7 +176,8 @@ export const UI_COPY: Record<
     },
     home: {
       intro:
-        'Visual practices bringing together artistic research, material experimentation and collaborative cultural processes around memory, identity and territory.',
+        'Uruguayan multimedia artist developing a practice of research and creation rooted in personal and collective experiences, exploring memory, roots, displacement, identity, and relationships with territory and cultural heritage.',
+      locations: 'Santiago de Chile | Bogotá | Montevideo',
       filtersToggle: 'Filters',
       categoryHeading: 'CATEGORY',
       yearHeading: 'YEAR',
@@ -202,6 +207,7 @@ export const UI_COPY: Record<
       fields: {
         title: 'Title',
         category: 'Category',
+        disciplines: 'Disciplines',
         year: 'Year',
         status: 'Status',
         medium: 'Medium / Technique',
