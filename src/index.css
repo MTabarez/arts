@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #F7F7F7;
+    --ink-primary: #141414;
+    --ink-secondary: #4A4A4A;
+    --ink-muted: #666666;
+    --hairline: rgba(20, 20, 20, 0.15);
+    --placeholder-bg: #EAEAEA;
+    --placeholder-alt: #E2E2E2;
+  }
+
+  html {
+    background-color: #F7F7F7;
+    color: #141414;
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F7F7F7;
+    color: #141414;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 1px solid #141414;
+    outline-offset: 3px;
+  }
+}
+
+.font-display-serif {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+.font-editorial-serif {
+  font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

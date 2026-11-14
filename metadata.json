@@ -1,0 +1,6 @@
+{
+  "name": "Marianne Tabarez Aristegui — Visual Artist Portfolio",
+  "description": "Bilingual contemporary visual art portfolio and archive of Uruguayan artist Marianne Tabarez Aristegui, exploring memory, identity, territory, and material practices.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
