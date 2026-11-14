@@ -27,7 +27,7 @@ const RootRedirect: React.FC = () => {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <LanguageProvider>
         <ScrollToTop />
         <Routes>

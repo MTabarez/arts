@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Language, ProjectImage } from '../types/portfolio';
+import { resolvePublicAsset } from '../utils/assets';
 
 interface ArtworkMediaProps {
   image: ProjectImage;
@@ -19,11 +20,12 @@ export const ArtworkMedia: React.FC<ArtworkMediaProps> = ({
   className = '',
 }) => {
   const [hasError, setHasError] = useState(false);
-  const showImage = Boolean(image.src) && !hasError;
+  const resolvedSrc = resolvePublicAsset(image.src);
+  const showImage = Boolean(resolvedSrc) && !hasError;
 
   const content = showImage ? (
     <img
-      src={image.src}
+      src={resolvedSrc}
       alt={image.alt[lang]}
       loading={priority ? 'eager' : 'lazy'}
       referrerPolicy="no-referrer"

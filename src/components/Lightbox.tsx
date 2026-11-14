@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Language, ProjectImage } from '../types/portfolio';
 import { UI_COPY } from '../data/siteContent';
 import { ArtworkMedia } from './ArtworkMedia';
+import { resolvePublicAsset } from '../utils/assets';
 
 interface LightboxProps {
   images: ProjectImage[];
@@ -80,7 +81,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
         <div className="w-full max-w-[960px] max-h-[75vh] flex items-center justify-center">
           {activeImage.src ? (
             <img
-              src={activeImage.src}
+              src={resolvePublicAsset(activeImage.src)}
               alt={activeImage.alt[lang]}
               referrerPolicy="no-referrer"
               className="max-w-full max-h-[74vh] w-auto h-auto object-contain block"
