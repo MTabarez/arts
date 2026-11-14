@@ -28,21 +28,28 @@ jobs:
         with:
           node-version: 22
 
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Install dependencies
         run: |
           if [ -f package-lock.json ]; then
-            npm ci
+            npm ci --legacy-peer-deps
           else
-            npm install
+            npm install --legacy-peer-deps
           fi
 
       - name: Resolve GitHub Pages base path
-        id: base-path
         run: |
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
           OWNER="${GITHUB_REPOSITORY%%/*}"
           if [ -f CNAME ] || [ -f public/CNAME ] || [ "$REPO_NAME" = "${OWNER}.github.io" ]; then
             echo "VITE_BASE_PATH=/" >> "$GITHUB_ENV"
+          elif [ -n "${{ steps.pages.outputs.base_path }}" ]; then
+            echo "VITE_BASE_PATH=${{ steps.pages.outputs.base_path }}/" >> "$GITHUB_ENV"
           else
             echo "VITE_BASE_PATH=/${REPO_NAME}/" >> "$GITHUB_ENV"
           fi
