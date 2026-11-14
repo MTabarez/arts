@@ -26,8 +26,11 @@ const RootRedirect: React.FC = () => {
 };
 
 export default function App() {
+  const baseUrl = import.meta.env.BASE_URL;
+  const routerBasename = baseUrl && baseUrl !== '/' ? baseUrl : undefined;
+
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename={routerBasename}>
       <LanguageProvider>
         <ScrollToTop />
         <Routes>

@@ -2,7 +2,10 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
+import {fileURLToPath} from 'url';
 import {defineConfig, type Plugin} from 'vite';
+
+const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
 function normalizeBase(rawBase?: string): string {
   if (!rawBase) return '/';
@@ -20,8 +23,13 @@ function githubPagesSpaPlugin(base: string): Plugin {
       outDir = config.build.outDir || 'dist';
     },
     closeBundle() {
-      const targetDir = path.resolve(__dirname, outDir);
+      const targetDir = path.resolve(rootDir, outDir);
       if (!fs.existsSync(targetDir)) return;
+
+      const rootCname = path.join(rootDir, 'CNAME');
+      if (fs.existsSync(rootCname)) {
+        fs.copyFileSync(rootCname, path.join(targetDir, 'CNAME'));
+      }
 
       const pathSegmentsToKeep = base.split('/').filter(Boolean).length;
       const html404 = `<!doctype html>
@@ -54,14 +62,17 @@ function githubPagesSpaPlugin(base: string): Plugin {
 }
 
 export default defineConfig(() => {
-  const base = normalizeBase(process.env.VITE_BASE_PATH);
+  const hasCname =
+    fs.existsSync(path.join(rootDir, 'CNAME')) ||
+    fs.existsSync(path.join(rootDir, 'public', 'CNAME'));
+  const base = hasCname ? '/' : normalizeBase(process.env.VITE_BASE_PATH);
 
   return {
     base,
     plugins: [react(), tailwindcss(), githubPagesSpaPlugin(base)],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': rootDir,
       },
     },
     server: {

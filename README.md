@@ -5,18 +5,15 @@ Sitio web bilingüe (ES / EN) desarrollado con React, Vite y Tailwind CSS, prepa
 ## Publicar en GitHub Pages
 
 1. Sube este repositorio a GitHub (rama `main` o `master`).
-2. En GitHub, ve a **Settings → Pages → Build and deployment → Source** y selecciona **GitHub Actions**.
+2. En GitHub, ve a **Settings → Pages → Build and deployment → Source** y selecciona **GitHub Actions** (no selecciones *Deploy from a branch*, porque el código fuente requiere compilación con Vite).
 3. El flujo incluido en `.github/workflows/deploy.yml` detecta automáticamente la ruta base:
-   - Si el repositorio se llama `<usuario>.github.io` o si existe `public/CNAME`, compila con base `/`.
-   - Si el repositorio es un proyecto (por ejemplo `portafolio`), compila automáticamente con base `/portafolio/`.
+   - Si existe `CNAME` en la raíz (o `public/CNAME`) o el repositorio se llama `<usuario>.github.io`, compila con base `/`.
+   - Si el repositorio es un proyecto sin dominio propio (por ejemplo `portafolio`), compila automáticamente con base `/portafolio/`.
 4. Cada `push` a `main` o `master` reconstruye y despliega el sitio automáticamente.
 
-### Dominio personalizado (opcional)
+### Dominio personalizado
 
-Si vas a usar un dominio propio (por ejemplo `mtabarez.com`):
-
-1. Crea el archivo `public/CNAME` con una sola línea: `mtabarez.com`
-2. Configura los registros DNS hacia GitHub Pages y activa **Enforce HTTPS** en **Settings → Pages**.
+El archivo `CNAME` en la raíz del proyecto (por ejemplo `arts.mtabarez.com`) se copia automáticamente a `dist/CNAME` durante el build. Asegúrate de tener los registros DNS apuntando a GitHub Pages y activar **Enforce HTTPS** en **Settings → Pages**.
 
 ### Agregar imágenes reales de las obras
 
