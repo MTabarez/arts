@@ -6,14 +6,20 @@ import { Header } from '../components/Header';
 import { SEOHead } from '../components/SEOHead';
 import { useLanguage } from '../context/LanguageContext';
 import { PROJECTS } from '../data/projects';
-import { CATEGORY_FILTERS, SITE_CONFIG, UI_COPY } from '../data/siteContent';
-import { FilterCategoryId } from '../types/portfolio';
+import {
+  PRACTICE_FILTERS,
+  SITE_CONFIG,
+  TECHNIQUE_FILTERS,
+  UI_COPY,
+} from '../data/siteContent';
+import { PracticeFilterId, TechniqueFilterId } from '../types/portfolio';
 
 export const HomePage: React.FC = () => {
   const { lang, localePath } = useLanguage();
   const copy = UI_COPY[lang];
 
-  const [selectedCategory, setSelectedCategory] = useState<FilterCategoryId>('all');
+  const [selectedTechnique, setSelectedTechnique] = useState<TechniqueFilterId>('all');
+  const [selectedPractice, setSelectedPractice] = useState<PracticeFilterId>('all');
   const [selectedYear, setSelectedYear] = useState<string>('all');
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
@@ -31,9 +37,13 @@ export const HomePage: React.FC = () => {
 
   const filteredProjects = useMemo(() => {
     return PROJECTS.filter((project) => {
-      const categoryMatch =
-        selectedCategory === 'all' ||
-        project.filterCategories.includes(selectedCategory);
+      const techniqueMatch =
+        selectedTechnique === 'all' ||
+        project.techniqueCategories.includes(selectedTechnique);
+
+      const practiceMatch =
+        selectedPractice === 'all' ||
+        project.practiceCategories.includes(selectedPractice);
 
       const yearMatch =
         selectedYear === 'all'
@@ -42,14 +52,18 @@ export const HomePage: React.FC = () => {
           ? project.year === null
           : project.year === selectedYear;
 
-      return categoryMatch && yearMatch;
+      return techniqueMatch && practiceMatch && yearMatch;
     });
-  }, [selectedCategory, selectedYear]);
+  }, [selectedTechnique, selectedPractice, selectedYear]);
 
-  const hasActiveFilter = selectedCategory !== 'all' || selectedYear !== 'all';
+  const hasActiveFilter =
+    selectedTechnique !== 'all' ||
+    selectedPractice !== 'all' ||
+    selectedYear !== 'all';
 
   const resetAllFilters = () => {
-    setSelectedCategory('all');
+    setSelectedTechnique('all');
+    setSelectedPractice('all');
     setSelectedYear('all');
   };
 
@@ -102,16 +116,16 @@ export const HomePage: React.FC = () => {
             <div className="pt-4 pb-2 space-y-6">
               <div>
                 <h2 className="font-editorial-serif text-[12px] tracking-[0.14em] uppercase text-[#555555] mb-2.5">
-                  {copy.home.categoryHeading}
+                  {copy.home.techniqueHeading}
                 </h2>
                 <ul className="flex flex-wrap gap-x-5 gap-y-2">
-                  {CATEGORY_FILTERS.map((cat) => {
-                    const active = selectedCategory === cat.id;
+                  {TECHNIQUE_FILTERS.map((tech) => {
+                    const active = selectedTechnique === tech.id;
                     return (
-                      <li key={cat.id}>
+                      <li key={tech.id}>
                         <button
                           type="button"
-                          onClick={() => setSelectedCategory(cat.id)}
+                          onClick={() => setSelectedTechnique(tech.id)}
                           aria-pressed={active}
                           className={`cursor-pointer font-editorial-serif text-[15px] py-0.5 transition-colors ${
                             active
@@ -119,7 +133,34 @@ export const HomePage: React.FC = () => {
                               : 'text-[#555555] hover:text-[#141414]'
                           }`}
                         >
-                          {cat.label[lang]}
+                          {tech.label[lang]}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="font-editorial-serif text-[12px] tracking-[0.14em] uppercase text-[#555555] mb-2.5">
+                  {copy.home.practiceHeading}
+                </h2>
+                <ul className="flex flex-wrap gap-x-5 gap-y-2">
+                  {PRACTICE_FILTERS.map((prac) => {
+                    const active = selectedPractice === prac.id;
+                    return (
+                      <li key={prac.id}>
+                        <button
+                          type="button"
+                          onClick={() => setSelectedPractice(prac.id)}
+                          aria-pressed={active}
+                          className={`cursor-pointer font-editorial-serif text-[15px] py-0.5 transition-colors ${
+                            active
+                              ? 'text-[#141414] font-medium underline underline-offset-4 decoration-[1px]'
+                              : 'text-[#555555] hover:text-[#141414]'
+                          }`}
+                        >
+                          {prac.label[lang]}
                         </button>
                       </li>
                     );
@@ -202,16 +243,16 @@ export const HomePage: React.FC = () => {
             <div className="space-y-10">
               <div>
                 <h2 className="font-editorial-serif text-[12px] tracking-[0.14em] uppercase text-[#555555] mb-3.5">
-                  {copy.home.categoryHeading}
+                  {copy.home.techniqueHeading}
                 </h2>
                 <ul className="space-y-1.5">
-                  {CATEGORY_FILTERS.map((cat) => {
-                    const active = selectedCategory === cat.id;
+                  {TECHNIQUE_FILTERS.map((tech) => {
+                    const active = selectedTechnique === tech.id;
                     return (
-                      <li key={cat.id}>
+                      <li key={tech.id}>
                         <button
                           type="button"
-                          onClick={() => setSelectedCategory(cat.id)}
+                          onClick={() => setSelectedTechnique(tech.id)}
                           aria-pressed={active}
                           className={`cursor-pointer text-left font-editorial-serif text-[15px] leading-[1.45] transition-colors block w-full py-0.5 ${
                             active
@@ -219,7 +260,34 @@ export const HomePage: React.FC = () => {
                               : 'text-[#555555] hover:text-[#141414]'
                           }`}
                         >
-                          {cat.label[lang]}
+                          {tech.label[lang]}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="font-editorial-serif text-[12px] tracking-[0.14em] uppercase text-[#555555] mb-3.5">
+                  {copy.home.practiceHeading}
+                </h2>
+                <ul className="space-y-1.5">
+                  {PRACTICE_FILTERS.map((prac) => {
+                    const active = selectedPractice === prac.id;
+                    return (
+                      <li key={prac.id}>
+                        <button
+                          type="button"
+                          onClick={() => setSelectedPractice(prac.id)}
+                          aria-pressed={active}
+                          className={`cursor-pointer text-left font-editorial-serif text-[15px] leading-[1.45] transition-colors block w-full py-0.5 ${
+                            active
+                              ? 'text-[#141414] font-medium underline underline-offset-4 decoration-[1px]'
+                              : 'text-[#555555] hover:text-[#141414]'
+                          }`}
+                        >
+                          {prac.label[lang]}
                         </button>
                       </li>
                     );

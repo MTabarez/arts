@@ -1,15 +1,20 @@
 export type Language = 'es' | 'en';
 
-export type FilterCategoryId =
+export type TechniqueFilterId =
   | 'all'
-  | 'artworks'
   | 'photography'
-  | 'moving-image'
-  | 'collage-mixed-media'
-  | 'drawing-painting'
-  | 'textile-collaborative'
-  | 'artistic-research'
-  | 'cultural-projects';
+  | 'video'
+  | 'collage'
+  | 'mixed-media'
+  | 'illustration'
+  | 'textile';
+
+export type PracticeFilterId =
+  | 'all'
+  | 'artwork'
+  | 'collaborative'
+  | 'research'
+  | 'cultural-project';
 
 export interface LocalizedText {
   es: string;
@@ -62,7 +67,8 @@ export interface Project {
     es: string[];
     en: string[];
   };
-  filterCategories: FilterCategoryId[];
+  techniqueCategories: Exclude<TechniqueFilterId, 'all'>[];
+  practiceCategories: Exclude<PracticeFilterId, 'all'>[];
   year: string | null; // Confirmed year or range (e.g., '2021', '2020–2021', '2026'); null if unconfirmed
   statusNote?: LocalizedText; // e.g., 'In development' / 'En desarrollo'
   medium: LocalizedText;

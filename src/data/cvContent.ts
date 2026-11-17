@@ -158,13 +158,6 @@ export const CV_CONTENT: Record<Language, CVLocaleData> = {
         slug: 'migrantes-montevideo',
       },
       {
-        title: 'Uruguay: Farewell',
-        medium: 'Video / Imagen en movimiento',
-        description:
-          'Ensayo audiovisual sobre la partida, el tránsito y la relación material con el territorio.',
-        slug: 'uruguay-farewell',
-      },
-      {
         title: 'Portable Memory Objects',
         medium: 'Objeto experimental / Exploración conceptual NFC (en desarrollo)',
         description:
@@ -489,13 +482,6 @@ export const CV_CONTENT: Record<Language, CVLocaleData> = {
         description:
           'Mosaic project addressing migration, identity, belonging and collective memory in Montevideo.',
         slug: 'migrantes-montevideo',
-      },
-      {
-        title: 'Uruguay: Farewell',
-        medium: 'Video / Moving image',
-        description:
-          'Audiovisual work structured around departure, territory and the material dimensions of leaving a place.',
-        slug: 'uruguay-farewell',
       },
       {
         title: 'Portable Memory Objects',

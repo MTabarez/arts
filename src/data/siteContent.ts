@@ -1,4 +1,4 @@
-import { FilterCategoryId, Language } from '../types/portfolio';
+import { Language, PracticeFilterId, TechniqueFilterId } from '../types/portfolio';
 
 export const SITE_CONFIG = {
   artistName: 'MARIANNE TABAREZ ARISTEGUI',
@@ -24,9 +24,11 @@ export const UI_COPY: Record<
       intro: string;
       locations: string;
       filtersToggle: string;
-      categoryHeading: string;
+      techniqueHeading: string;
+      practiceHeading: string;
       yearHeading: string;
-      allCategories: string;
+      allTechniques: string;
+      allPractices: string;
       allYears: string;
       undatedLabel: string;
       resetFilters: string;
@@ -99,9 +101,11 @@ export const UI_COPY: Record<
         'Artista multimedia uruguaya que desarrolla una práctica de investigación y creación a partir de experiencias personales y colectivas, explorando la memoria, las raíces, los desplazamientos, la identidad y las relaciones con el territorio y el patrimonio cultural.',
       locations: 'Santiago de Chile | Bogotá | Montevideo',
       filtersToggle: 'Filtros',
-      categoryHeading: 'CATEGORÍA',
+      techniqueHeading: 'TÉCNICAS',
+      practiceHeading: 'PRÁCTICA',
       yearHeading: 'AÑO',
-      allCategories: 'Todas',
+      allTechniques: 'Todas',
+      allPractices: 'Todas',
       allYears: 'Todos',
       undatedLabel: 'Sin fecha confirmada / En proceso',
       resetFilters: 'Restablecer filtros',
@@ -179,9 +183,11 @@ export const UI_COPY: Record<
         'Uruguayan multimedia artist developing a practice of research and creation rooted in personal and collective experiences, exploring memory, roots, displacement, identity, and relationships with territory and cultural heritage.',
       locations: 'Santiago de Chile | Bogotá | Montevideo',
       filtersToggle: 'Filters',
-      categoryHeading: 'CATEGORY',
+      techniqueHeading: 'TECHNIQUES',
+      practiceHeading: 'PRACTICE',
       yearHeading: 'YEAR',
-      allCategories: 'All',
+      allTechniques: 'All',
+      allPractices: 'All',
       allYears: 'All',
       undatedLabel: 'Date pending / Ongoing',
       resetFilters: 'Reset filters',
@@ -248,38 +254,26 @@ export const UI_COPY: Record<
   },
 };
 
-export const CATEGORY_FILTERS: {
-  id: FilterCategoryId;
+export const TECHNIQUE_FILTERS: {
+  id: TechniqueFilterId;
   label: Record<Language, string>;
 }[] = [
   { id: 'all', label: { es: 'Todas', en: 'All' } },
-  { id: 'artworks', label: { es: 'Obras', en: 'Artworks' } },
   { id: 'photography', label: { es: 'Fotografía', en: 'Photography' } },
-  {
-    id: 'moving-image',
-    label: { es: 'Imagen en movimiento / Video', en: 'Moving Image / Video' },
-  },
-  {
-    id: 'collage-mixed-media',
-    label: { es: 'Collage y técnica mixta', en: 'Collage & Mixed Media' },
-  },
-  {
-    id: 'drawing-painting',
-    label: { es: 'Dibujo y pintura', en: 'Drawing & Painting' },
-  },
-  {
-    id: 'textile-collaborative',
-    label: {
-      es: 'Textil y prácticas colaborativas',
-      en: 'Textile & Collaborative Practices',
-    },
-  },
-  {
-    id: 'artistic-research',
-    label: { es: 'Investigación artística', en: 'Artistic Research' },
-  },
-  {
-    id: 'cultural-projects',
-    label: { es: 'Proyectos culturales', en: 'Cultural Projects' },
-  },
+  { id: 'video', label: { es: 'Video', en: 'Video' } },
+  { id: 'collage', label: { es: 'Collage', en: 'Collage' } },
+  { id: 'mixed-media', label: { es: 'Técnica mixta', en: 'Mixed Media' } },
+  { id: 'illustration', label: { es: 'Ilustración', en: 'Illustration' } },
+  { id: 'textile', label: { es: 'Textil', en: 'Textile' } },
+];
+
+export const PRACTICE_FILTERS: {
+  id: PracticeFilterId;
+  label: Record<Language, string>;
+}[] = [
+  { id: 'all', label: { es: 'Todas', en: 'All' } },
+  { id: 'artwork', label: { es: 'Obra', en: 'Artwork' } },
+  { id: 'collaborative', label: { es: 'Colaborativo', en: 'Collaborative' } },
+  { id: 'research', label: { es: 'Investigación', en: 'Research' } },
+  { id: 'cultural-project', label: { es: 'Proyecto cultural', en: 'Cultural Project' } },
 ];

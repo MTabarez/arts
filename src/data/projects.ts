@@ -35,13 +35,8 @@ export const PROJECTS: Project[] = [
         'Digital Animation',
       ],
     },
-    filterCategories: [
-      'artworks',
-      'photography',
-      'moving-image',
-      'collage-mixed-media',
-      'artistic-research',
-    ],
+    techniqueCategories: ['photography', 'video', 'collage', 'mixed-media'],
+    practiceCategories: ['artwork', 'research'],
     year: '2025',
     medium: {
       es: 'Intervención urbana, collage, fotografía, video y animación digital',
@@ -207,7 +202,8 @@ export const PROJECTS: Project[] = [
       es: 'Collage / Obra sobre papel',
       en: 'Collage / Paper Works',
     },
-    filterCategories: ['artworks', 'collage-mixed-media'],
+    techniqueCategories: ['collage'],
+    practiceCategories: ['artwork'],
     year: null,
     medium: {
       es: 'Collage sobre papel',
@@ -278,10 +274,11 @@ export const PROJECTS: Project[] = [
       en: 'Migrantes',
     },
     categoryLabel: {
-      es: 'Fotografía / Collage digital / Cianotipia · Investigación artística',
-      en: 'Photography / Digital Collage / Cyanotype · Artistic Research',
+      es: 'Fotografía / Collage / Cianotipia',
+      en: 'Photography / Collage / Cyanotype',
     },
-    filterCategories: ['artworks', 'photography', 'collage-mixed-media', 'artistic-research'],
+    techniqueCategories: ['photography', 'collage', 'mixed-media'],
+    practiceCategories: ['artwork', 'collaborative', 'research'],
     year: '2020–2021',
     medium: {
       es: 'Fotografía, collage digital y cianotipia',
@@ -363,7 +360,7 @@ export const PROJECTS: Project[] = [
         kind: 'image',
       },
     ],
-    relatedSlugs: ['migrantes-montevideo', 'colombia-cyanotypes-and-embroidery', 'uruguay-farewell'],
+    relatedSlugs: ['migrantes-montevideo', 'colombia-cyanotypes-and-embroidery', 'superficies-tomadas'],
   },
 
   {
@@ -377,7 +374,8 @@ export const PROJECTS: Project[] = [
       es: 'Arte público / Mosaico / Memoria cultural',
       en: 'Public Art / Mosaic / Cultural Memory',
     },
-    filterCategories: ['artworks', 'textile-collaborative', 'artistic-research'],
+    techniqueCategories: ['mixed-media'],
+    practiceCategories: ['artwork', 'research', 'cultural-project'],
     year: null,
     medium: {
       es: 'Mosaico y práctica artística en contexto urbano',
@@ -468,12 +466,8 @@ export const PROJECTS: Project[] = [
       es: 'Cianotipia / Textil / Técnica mixta',
       en: 'Cyanotype / Textile / Mixed Media',
     },
-    filterCategories: [
-      'artworks',
-      'photography',
-      'collage-mixed-media',
-      'textile-collaborative',
-    ],
+    techniqueCategories: ['photography', 'mixed-media', 'textile'],
+    practiceCategories: ['artwork'],
     year: null,
     medium: {
       es: 'Cianotipia sobre tela, bordado y objeto textil (oso solidario)',
@@ -550,7 +544,7 @@ export const PROJECTS: Project[] = [
         kind: 'detail',
       },
     ],
-    relatedSlugs: ['paramos', 'symbolic-drawings', 'escritoras-tejiendo-paz'],
+    relatedSlugs: ['paramos', 'migrantes', 'escritoras-tejiendo-paz'],
   },
 
   {
@@ -564,7 +558,8 @@ export const PROJECTS: Project[] = [
       es: 'Pintura / Técnica mixta',
       en: 'Painting / Mixed Media',
     },
-    filterCategories: ['artworks', 'drawing-painting', 'collage-mixed-media'],
+    techniqueCategories: ['mixed-media'],
+    practiceCategories: ['artwork'],
     year: null,
     medium: {
       es: 'Pintura, relieve material y técnica mixta',
@@ -620,165 +615,22 @@ export const PROJECTS: Project[] = [
         kind: 'detail',
       },
     ],
-    relatedSlugs: ['symbolic-drawings', 'colombia-cyanotypes-and-embroidery', 'superficies-tomadas'],
+    relatedSlugs: ['colombia-cyanotypes-and-embroidery', 'superficies-tomadas', 'america-invertida'],
   },
 
   {
     id: '07',
-    slug: 'symbolic-drawings',
-    title: {
-      es: 'Symbolic Drawings',
-      en: 'Symbolic Drawings',
-    },
-    categoryLabel: {
-      es: 'Dibujo',
-      en: 'Drawing',
-    },
-    filterCategories: ['artworks', 'drawing-painting'],
-    year: null,
-    medium: {
-      es: 'Dibujo sobre papel',
-      en: 'Drawing on paper',
-    },
-    shortDescription: {
-      es: 'Serie de dibujos simbólicos en torno a frailejones, el fuego, el paisaje y la figura de una niña reclutada, abordados desde un lenguaje visual crítico.',
-      en: 'A series of symbolic drawings involving frailejones, fire, landscape, and the figure of a recruited girl, approached through critical visual language.',
-    },
-    curatorialDescription: {
-      es: [
-        'Symbolic Drawings reúne una serie de trabajos gráficos en los que elementos botánicos, fuerzas de alteración y presencias humanas se articulan en composiciones de densidad conceptual. La recurrencia del frailejón —planta emblemática de los páramos andinos—, el fuego y la figura de una niña reclutada evita la ilustración literal o el tono sensacionalista para situar la violencia histórica en el plano de la alegoría crítica.',
-        'Mediante el trazo contenido y la economía de medios propia del dibujo, las obras plantean una tensión entre vulnerabilidad y persistencia: aquello que arde o es arrancado de su entorno permanece como signo que interroga la memoria colectiva del territorio.',
-      ],
-      en: [
-        'Symbolic Drawings brings together a sequence of works on paper where botanical forms, agents of alteration, and human presence converge in conceptually condensed compositions. The recurrence of frailejones—emblematic plants of the Andean páramo—alongside fire and the figure of a recruited girl avoids literal illustration or sensationalist tropes, situating historical violence within critical allegory.',
-        'Through restrained linework and the economy of drawing, the series establishes a tension between vulnerability and endurance: what burns or is uprooted from its territory persists as a visual sign interrogating collective memory.',
-      ],
-    },
-    mainImage: {
-      id: 'sd-main',
-      aspectRatio: '3/4',
-      alt: {
-        es: 'Symbolic Drawings — dibujo sobre papel (marcador de posición)',
-        en: 'Symbolic Drawings — drawing on paper (placeholder)',
-      },
-      caption: {
-        es: 'Symbolic Drawings — Serie sobre papel.',
-        en: 'Symbolic Drawings — Series on paper.',
-      },
-      placeholderLabel: {
-        es: 'Dibujo sobre papel · Vista principal',
-        en: 'Drawing on paper · Primary view',
-      },
-      kind: 'image',
-    },
-    gallery: [
-      {
-        id: 'sd-01',
-        aspectRatio: '4/5',
-        alt: {
-          es: 'Symbolic Drawings — estudio de frailejones y fuego (marcador de posición)',
-          en: 'Symbolic Drawings — study of frailejones and fire (placeholder)',
-        },
-        caption: {
-          es: 'Pieza de la serie: elementos botánicos y fuego.',
-          en: 'Work from the series: botanical elements and fire.',
-        },
-        placeholderLabel: {
-          es: 'Dibujo · Pieza de serie',
-          en: 'Drawing · Series piece',
-        },
-        kind: 'image',
-      },
-    ],
-    relatedSlugs: ['paramos', 'colombia-cyanotypes-and-embroidery', 'escritoras-tejiendo-paz'],
-  },
-
-  {
-    id: '08',
-    slug: 'uruguay-farewell',
-    title: {
-      es: 'Uruguay: Farewell',
-      en: 'Uruguay: Farewell',
-    },
-    categoryLabel: {
-      es: 'Video / Imagen en movimiento',
-      en: 'Video / Moving Image',
-    },
-    filterCategories: ['artworks', 'moving-image'],
-    year: null,
-    medium: {
-      es: 'Video monocanal',
-      en: 'Single-channel video',
-    },
-    location: {
-      es: 'Uruguay',
-      en: 'Uruguay',
-    },
-    shortDescription: {
-      es: 'Obra audiovisual desarrollada en torno a la partida, la memoria, el territorio y las dimensiones materiales y afectivas de dejar un lugar.',
-      en: 'An audiovisual work developed around departure, memory, territory, and the material and emotional dimensions of leaving a place.',
-    },
-    curatorialDescription: {
-      es: [
-        'Uruguay: Farewell examina el umbral de la partida como experiencia espacial y temporal. A través del ritmo pausado de la imagen en movimiento y de una atención sostenida a los espacios cotidianos, los gestos de cierre y los fragmentos de paisaje, el video indaga en cómo un territorio comienza a transformarse en recuerdo antes de ser abandonado.',
-        'La obra evita el registro confesional para observar los signos materiales de la transición: lo que se empaca, lo que permanece inmóvil y la distancia que se abre entre pertenencia geográfica y movilidad.',
-      ],
-      en: [
-        'Uruguay: Farewell examines the threshold of departure as both a spatial and temporal condition. Through the measured pacing of moving image and sustained attention to everyday spaces, gestures of closure, and fragments of landscape, the video investigates how a territory begins to turn into memory even before it is physically left behind.',
-        'Avoiding purely confessional narration, the work attends to the material signs of transition: what is packed, what remains still, and the distance opening between geographical belonging and mobility.',
-      ],
-    },
-    mainImage: {
-      id: 'uf-main',
-      aspectRatio: '16/9',
-      alt: {
-        es: 'Uruguay: Farewell — fotograma de video (marcador de posición)',
-        en: 'Uruguay: Farewell — video still (placeholder)',
-      },
-      caption: {
-        es: 'Fotograma de referencia — Obra audiovisual.',
-        en: 'Reference video still — Audiovisual work.',
-      },
-      placeholderLabel: {
-        es: 'Video · Fotograma 16:9',
-        en: 'Video · 16:9 Still',
-      },
-      kind: 'video-still',
-    },
-    gallery: [
-      {
-        id: 'uf-01',
-        aspectRatio: '16/9',
-        alt: {
-          es: 'Uruguay: Farewell — segundo fotograma (marcador de posición)',
-          en: 'Uruguay: Farewell — second video still (placeholder)',
-        },
-        caption: {
-          es: 'Secuencia audiovisual — Archivo de video por incorporar.',
-          en: 'Audiovisual sequence — Video file pending integration.',
-        },
-        placeholderLabel: {
-          es: 'Video · Secuencia / Fotograma',
-          en: 'Video · Sequence still',
-        },
-        kind: 'video-still',
-      },
-    ],
-    relatedSlugs: ['santa-lucia-del-este', 'tea-project', 'migrantes'],
-  },
-
-  {
-    id: '09',
     slug: 'santa-lucia-del-este',
     title: {
       es: 'Santa Lucía del Este',
       en: 'Santa Lucía del Este',
     },
     categoryLabel: {
-      es: 'Video / Imagen en movimiento',
-      en: 'Video / Moving Image',
+      es: 'Video',
+      en: 'Video',
     },
-    filterCategories: ['artworks', 'moving-image'],
+    techniqueCategories: ['video'],
+    practiceCategories: ['artwork'],
     year: '2021',
     medium: {
       es: 'Video monocanal',
@@ -838,11 +690,11 @@ export const PROJECTS: Project[] = [
         kind: 'video-still',
       },
     ],
-    relatedSlugs: ['uruguay-farewell', 'tea-project'],
+    relatedSlugs: ['tea-project', 'superficies-tomadas'],
   },
 
   {
-    id: '10',
+    id: '08',
     slug: 'portable-memory-objects',
     title: {
       es: 'Portable Memory Objects',
@@ -852,7 +704,8 @@ export const PROJECTS: Project[] = [
       es: 'Objeto experimental / Exploración conceptual',
       en: 'Experimental Object / Conceptual Exploration',
     },
-    filterCategories: ['artworks', 'collage-mixed-media', 'artistic-research'],
+    techniqueCategories: ['mixed-media'],
+    practiceCategories: ['artwork', 'research'],
     year: null,
     statusNote: {
       es: 'En desarrollo',
@@ -916,21 +769,22 @@ export const PROJECTS: Project[] = [
         kind: 'detail',
       },
     ],
-    relatedSlugs: ['colombia-cyanotypes-and-embroidery', 'tea-project', 'uruguay-farewell'],
+    relatedSlugs: ['colombia-cyanotypes-and-embroidery', 'tea-project', 'superficies-tomadas'],
   },
 
   {
-    id: '11',
+    id: '09',
     slug: 'tea-project',
     title: {
       es: 'Tea Project',
       en: 'Tea Project',
     },
     categoryLabel: {
-      es: 'Video / Imagen en movimiento',
-      en: 'Video / Moving Image',
+      es: 'Video',
+      en: 'Video',
     },
-    filterCategories: ['artworks', 'moving-image'],
+    techniqueCategories: ['video'],
+    practiceCategories: ['artwork'],
     year: null,
     medium: {
       es: 'Video editado para presentación web',
@@ -990,11 +844,11 @@ export const PROJECTS: Project[] = [
         kind: 'video-still',
       },
     ],
-    relatedSlugs: ['uruguay-farewell', 'santa-lucia-del-este', 'portable-memory-objects'],
+    relatedSlugs: ['santa-lucia-del-este', 'portable-memory-objects', 'superficies-tomadas'],
   },
 
   {
-    id: '12',
+    id: '10',
     slug: 'escritoras-tejiendo-paz',
     title: {
       es: 'Escritoras Tejiendo Paz',
@@ -1004,7 +858,8 @@ export const PROJECTS: Project[] = [
       es: 'Práctica colaborativa / Proyecto cultural',
       en: 'Collaborative Practice / Cultural Project',
     },
-    filterCategories: ['textile-collaborative', 'cultural-projects'],
+    techniqueCategories: [],
+    practiceCategories: ['collaborative', 'cultural-project'],
     year: '2026',
     medium: {
       es: 'Participación desde las artes visuales en proceso colectivo de memoria y creación',
